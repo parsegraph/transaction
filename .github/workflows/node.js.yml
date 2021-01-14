@@ -12,6 +12,8 @@ jobs:
     services:
       transactionserver:
         image: dafrito/transaction-server:2452637ac577dec1d2f0b51250ce436ffd520f54
+        ports:
+        - 8000:8000
     runs-on: ubuntu-latest
     strategy:
       matrix:
