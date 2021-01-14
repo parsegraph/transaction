@@ -29,7 +29,7 @@ describe("Account", function () {
   });
 });
 
-describe("Category", function () {
+/*describe("Category", function () {
   it("can be created and deleted", async ()=>{
     const server = createServer();
     const cat = new Category(null, "A fancy name", null);
@@ -48,4 +48,5 @@ describe("Category", function () {
     assert.ok(resp);
   });
 });
+*/
 
