@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: ls -R
     - run: npm ci
-    - run: ping transactionserver || true
+    - run: ping -c4 transactionserver || true
     - run: make
     - run: |
         mkdir parsegraph-transaction
