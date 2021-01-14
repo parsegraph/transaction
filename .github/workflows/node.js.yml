@@ -9,6 +9,9 @@ on:
 
 jobs:
   build:
+    services:
+      transactionserver:
+        image: dafrito/transaction-server
     runs-on: ubuntu-latest
     strategy:
       matrix:
