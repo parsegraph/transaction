@@ -4,7 +4,7 @@ import '@babel/polyfill';
 
 describe("Account", function () {
   it("can be created and deleted", async ()=>{
-    const server = new Server("http://127.0.0.1:8000");
+    const server = new Server("http://transactionserver:8000");
     const acct = new Account(null, "A fancy name");
     let resp = await acct.save(server);
     assert.ok(resp);
