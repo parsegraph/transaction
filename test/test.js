@@ -1,8 +1,12 @@
 var assert = require("assert");
-import todo from "../dist/transaction";
+import {Server, Account} from "../dist/transaction";
+import '@babel/polyfill';
 
-describe("Package", function () {
-  it("works", ()=>{
-    assert.equal(todo(), 42);
+describe("Account", function () {
+  it("works", async ()=>{
+    const server = new Server("http://127.0.0.1:8000");
+    const acct = new Account("A fancy name");
+    const resp = await acct.save(server);
+    assert.ok(resp);
   });
 });
