@@ -15,17 +15,13 @@ jobs:
         ports:
         - 8000:8000
     runs-on: ubuntu-latest
-    container: node:alpine
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [10, 12, 14]
+    container: node:${{ matrix.node-version }}
     steps:
     - uses: actions/checkout@v2
     - run: ls -R
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: ping transactionserver || true
     - run: make
