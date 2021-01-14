@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
+    - run: ping transactionserver || true
     - run: make
     - run: |
         mkdir parsegraph-transaction
